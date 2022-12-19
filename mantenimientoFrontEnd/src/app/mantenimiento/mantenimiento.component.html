@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    Lista de Mantemientos </div>
+  <div class="card-body">
+        <a class="nav-link" routerLink="/mantemientos/guardar"><i class="fas fa-plus-circle"></i> Nueva Categoria</a>
+   <br>
+
+    <table class="table caption-top">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th scope="col">CODIGO</th>
+          <th scope="col">MARCA</th>
+          <th scope="col">MODELO</th>
+          <th scope="col">AÑO FABRICACION</th>
+          <th scope="col">FECHA MANTENIMIENTO</th>
+          <th scope="col">MONTO</th>
+          <th scope="col">KILOMETRAJE</th>
+          <th scope="col" class="text-center">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mantenimientos of mantenimiento">
+          <td>{{mantenimientos.codigo}}</td>
+          <td>{{mantenimientos.marca}}</td>
+          <td>{{mantenimientos.modelo}}</td>
+          <td>{{mantenimientos.anoFabricacion}}</td>
+          <td>{{mantenimientos.fechaMantenimiento}}</td>
+          <td>{{mantenimientos.monto}}</td>
+          <td>{{mantenimientos.kilometraje}}</td>
+          <td class="text-center">
+            <button class="btn btn-outline-primary" routerLink="/mantenimientos/detalle/{{mantenimientos.codigo}}" style="margin-left : 10px;"><i class="far fa-eye"></i> Ver</button>
+            <button class="btn btn-outline-warning" routerLink="/mantenimientos/editar/{{mantenimientos.codigo}}" style="margin-left : 10px;"><i class="far fa-edit"></i> Editar</button>
+              <button class="btn btn-outline-danger" (click)="borrarMantenimiento(mantenimientos.codigo)" style="margin-left : 10px;"><i class="far fa-trash-alt"></i> Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

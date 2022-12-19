@@ -1,0 +1,55 @@
+<div class="container" *ngIf="mantenimiento">
+  <div class="card" style="width: 40rem; left: 125px; top: 10px;">
+    <div class="card-body">
+      <h5 class="card-title">Registrar Mantenimiento</h5>
+      <div class="row mt-2">
+        <div class="col-md-8 mx-auto">
+          <form (ngSubmit)="onUpdateMantenimiento()" novalidate #f="ngForm">
+            <div class="form-group">
+              <label for="fechaMantenimiento">Marca</label>
+              <input type="text" class="form-control" id="marca" name="marca" [(ngModel)]="mantenimiento.marca"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="modelo">Modelo</label>
+              <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="mantenimiento.modelo"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="anoFabricacion">Año Fabricacion</label>
+              <input type="text" class="form-control" id="anoFabricacion" name="anoFabricacion" [(ngModel)]="mantenimiento.anoFabricacion"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="fechaMantenimiento">Fecha Mantenimiento</label>
+              <input type="text" class="form-control" id="fechaMantenimiento" name="fechaMantenimiento" [(ngModel)]="mantenimiento.fechaMantenimiento"
+                required />
+            </div>
+
+
+            <div class="form-group">
+              <label for="monto">Monto</label>
+              <input type="text" class="form-control" id="monto" name="monto" [(ngModel)]="mantenimiento.monto"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="kilometraje">Kilometraje</label>
+              <input type="text" class="form-control" id="kilometraje" name="kilometraje" [(ngModel)]="mantenimiento.kilometraje"
+                required />
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-outline-danger me-md-2 row mr-4" type="button" [routerLink]="['/categorias']"><i
+                  class="fas fa-undo"></i> Cancelar</button>
+              <button class="btn btn-outline-primary row mr-1" role="button"><i class="fas fa-plus-circle"></i>
+                Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

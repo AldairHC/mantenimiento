@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-5" *ngIf="mantenimiento">
+    <div class="col-md-4 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header text-center">
+          Detalle Mantenimiento
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>ID: </b>{{mantenimiento.codigo}}</li>
+          <li class="list-group-item"><b>Marca: </b>{{mantenimiento.marca}}</li>
+          <li class="list-group-item"><b>Modelo: </b>{{mantenimiento.modelo}}</li>
+          <li class="list-group-item"><b>AñoFabricacion: </b>{{mantenimiento.anoFabricacion}}</li>
+          <li class="list-group-item"><b>Fecha Mantenimiento: </b>{{mantenimiento.fechaMantenimiento}}</li>
+          <li class="list-group-item"><b>monto: </b>{{mantenimiento.monto}}</li>
+          <li class="list-group-item"><b>kilometraje: </b>{{mantenimiento.kilometraje}}</li>
+        </ul>
+        <div class="card-footer">
+          <button class="btn btn-outline-primary btn-block" (click)="volver()"><i
+              class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
